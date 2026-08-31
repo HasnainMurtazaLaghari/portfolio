@@ -1,0 +1,509 @@
+/* ===== CONTACT SECTION ===== */
+.contact-section {
+    padding: 80px 0;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    margin: 24px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ===== SOCIAL GRID ===== */
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* ===== SOCIAL CARDS ===== */
+.social-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    padding: 1.8rem 1.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #1a202c;
+    min-height: 170px;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Card Icon - Default Dark */
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+    color: #2d3748;
+    transition: all 0.3s ease;
+}
+
+.social-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 0.3rem;
+}
+
+.social-card p {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-bottom: 0.8rem;
+    flex-grow: 1;
+}
+
+.card-arrow {
+    font-size: 1.2rem;
+    color: #a0aec0;
+    transition: all 0.3s ease;
+}
+
+.social-card:hover .card-arrow {
+    transform: translateX(8px);
+    color: #4f46e5;
+}
+
+/* ===== INDIVIDUAL CARD HOVER STYLES ===== */
+
+/* 1. RESUME - Red */
+.social-card.cv {
+    border-color: rgba(255, 107, 107, 0.2);
+}
+
+.social-card.cv:hover {
+    border-color: #ff6b6b;
+    box-shadow: 0 12px 40px rgba(255, 107, 107, 0.15);
+}
+
+.social-card.cv:hover .card-icon {
+    color: #ff6b6b;
+}
+
+.social-card.cv:hover .card-arrow {
+    color: #ff6b6b;
+}
+
+/* 2. EMAIL - Red */
+.social-card.email {
+    border-color: rgba(234, 67, 53, 0.2);
+}
+
+.social-card.email:hover {
+    border-color: #ea4335;
+    box-shadow: 0 12px 40px rgba(234, 67, 53, 0.15);
+}
+
+.social-card.email:hover .card-icon {
+    color: #ea4335;
+}
+
+.social-card.email:hover .card-arrow {
+    color: #ea4335;
+}
+
+/* 3. GITHUB - DARK (No Blue!) */
+.social-card.github {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.social-card.github:hover {
+    border-color: #6e7681;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.social-card.github:hover .card-icon {
+    color: #1a202c; /* Dark, not blue */
+}
+
+.social-card.github:hover .card-arrow {
+    color: #1a202c;
+}
+
+/* 4. LINKEDIN - Blue */
+.social-card.linkedin {
+    border-color: rgba(10, 102, 194, 0.2);
+}
+
+.social-card.linkedin:hover {
+    border-color: #0a66c2;
+    box-shadow: 0 12px 40px rgba(10, 102, 194, 0.15);
+}
+
+.social-card.linkedin:hover .card-icon {
+    color: #0a66c2;
+}
+
+.social-card.linkedin:hover .card-arrow {
+    color: #0a66c2;
+}
+
+/* ===== SECTION TITLE ===== */
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    color: #1a202c;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.section-title:hover {
+    transform: scale(1.05);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #718096;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* ===== CONTACT FOOTER ===== */
+.contact-footer {
+    color: #718096;
+    font-size: 0.9rem;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+}
+
+.footer-line {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #4f46e5, #7c3aed);
+    margin: 0 auto 1rem;
+    border-radius: 2px;
+}
+
+.footer-year {
+    color: #a0aec0;
+    font-size: 0.85rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .social-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .social-card {
+        padding: 1.5rem 1rem;
+        min-height: 150px;
+    }
+
+    .card-icon {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+    }
+
+    .social-card {
+        padding: 1rem 0.8rem;
+        min-height: 130px;
+    }
+
+    .card-icon {
+        font-size: 1.8rem;
+    }
+
+    .social-card h3 {
+        font-size: 0.95rem;
+    }
+
+    .social-card p {
+        font-size: 0.75rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.95rem;
+    }
+}
+
+/* ============================================ */
+/* ===== COFFEE CUP STYLES ===== */
+/* ============================================ */
+
+.coffee-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+    position: relative;
+    margin-top: 20px;
+}
+
+.coffee-cup {
+    position: relative;
+    width: 120px;
+    height: 130px;
+    animation: cupFloat 3s ease-in-out infinite;
+    margin-top: 30px;
+}
+
+/* Cup Body */
+.cup-body {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 75px;
+    background: linear-gradient(160deg, #f5f0eb, #d4c9c0, #e8ddd5, #f5f0eb);
+    border-radius: 0 0 20px 20px;
+    border: 2px solid #c4b5a5;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15), inset 0 -10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Cup Top */
+.cup-top {
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 14px;
+    background: linear-gradient(180deg, #e8ddd5, #d4c9c0, #c4b5a5);
+    border-radius: 6px 6px 0 0;
+    border: 2px solid #b8a898;
+    box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Coffee Fill */
+.cup-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(180deg, #5C3D2E, #3D2B1F, #2C1810);
+    border-radius: 0 0 18px 18px;
+    animation: fillCoffee 3s ease-in-out infinite;
+    box-shadow: inset 0 -10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Coffee Crema */
+.cup-fill::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(180deg, #c49a6c, #8B6914);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: cremaMove 3s ease-in-out infinite;
+}
+
+/* Cup Shine */
+.cup-shine {
+    position: absolute;
+    top: 15px;
+    left: 12px;
+    width: 18px;
+    height: 40px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.05));
+    border-radius: 50%;
+    transform: rotate(-20deg);
+}
+
+/* Cup Handle */
+.cup-handle {
+    position: absolute;
+    right: -22px;
+    top: 18px;
+    width: 30px;
+    height: 42px;
+    border: 5px solid #d4c9c0;
+    border-left: none;
+    border-radius: 0 25px 25px 0;
+    background: transparent;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1), inset -2px 0 10px rgba(255, 255, 255, 0.2);
+    border-color: #c4b5a5;
+}
+
+/* Cup Saucer */
+.cup-saucer {
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110px;
+    height: 12px;
+    background: linear-gradient(180deg, #e8ddd5, #d4c9c0, #c4b5a5);
+    border-radius: 50%;
+    border: 2px solid #b8a898;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: -1;
+}
+
+/* Cup Shadow */
+.cup-shadow {
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 15px;
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 0.2), transparent);
+    border-radius: 50%;
+    animation: shadowPulse 3s ease-in-out infinite;
+}
+
+/* Code Text */
+.code-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    text-align: center;
+}
+
+.code-line {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fbbf24;
+    text-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+    animation: codeGlow 2s ease-in-out infinite;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2px 12px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    font-family: 'Courier New', monospace;
+}
+
+/* Coffee Label */
+.coffee-label {
+    margin-top: 35px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.label-java {
+    font-size: 30px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b, #fbbf24);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease-in-out infinite;
+    letter-spacing: 5px;
+    font-family: 'Georgia', serif;
+}
+
+.label-dev {
+    font-size: 13px;
+    color: #a0aec0;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* ===== STEAM ===== */
+.steam-container {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 80px;
+    z-index: 10;
+}
+
+.steam {
+    position: absolute;
+    bottom: 0;
+    border-radius: 50%;
+    animation: steamRise 3s ease-in-out infinite;
+    opacity: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.02));
+    filter: blur(6px);
+}
+
+.s1 { left: 8%; animation-delay: 0s; height: 45px; width: 16px; }
+.s2 { left: 28%; animation-delay: 0.6s; height: 35px; width: 12px; }
+.s3 { left: 48%; animation-delay: 1.2s; height: 50px; width: 14px; }
+.s4 { left: 68%; animation-delay: 1.8s; height: 38px; width: 13px; }
+.s5 { left: 18%; animation-delay: 0.9s; height: 42px; width: 11px; }
+.s6 { left: 58%; animation-delay: 1.5s; height: 48px; width: 15px; }
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes cupFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1.5deg); }
+}
+
+@keyframes fillCoffee {
+    0%, 100% { height: 0%; }
+    30% { height: 50%; }
+    70% { height: 70%; }
+}
+
+@keyframes cremaMove {
+    0%, 100% { transform: translateX(0); opacity: 0.5; }
+    50% { transform: translateX(5px); opacity: 0.8; }
+}
+
+@keyframes shadowPulse {
+    0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.25; }
+    50% { transform: translateX(-50%) scale(0.85); opacity: 0.5; }
+}
+
+@keyframes codeGlow {
+    0%, 100% { text-shadow: 0 0 20px rgba(251, 191, 36, 0.2); }
+    50% { text-shadow: 0 0 40px rgba(251, 191, 36, 0.6), 0 0 80px rgba(251, 191, 36, 0.2); }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes steamRise {
+    0% { transform: translateY(0) scale(0.3) rotate(0deg); opacity: 0; }
+    20% { opacity: 0.9; }
+    50% { opacity: 0.7; transform: translateY(-35px) scale(1.4) rotate(15deg); }
+    80% { opacity: 0.4; }
+    100% { transform: translateY(-80px) scale(2.2) rotate(-15deg); opacity: 0; }
+}
