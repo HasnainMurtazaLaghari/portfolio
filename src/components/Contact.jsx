@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
 import { HiDocumentText } from 'react-icons/hi';
 import './contact.css';
 
@@ -81,7 +81,20 @@ const Contact = () => {
                             <span className="card-arrow">→</span>
                         </div>
 
-                        {/* ⭐ 2nd: Email */}
+                        {/* ⭐ 2nd: Phone */}
+                        <a
+                            href="tel:+923072848324"
+                            className="social-card phone"
+                        >
+                            <div className="card-icon">
+                                <FaPhone />
+                            </div>
+                            <h3>Phone</h3>
+                            <p>+92 3072848324</p>
+                            <span className="card-arrow">→</span>
+                        </a>
+
+                        {/* ⭐ 3rd: Email */}
                         <a
                             href="mailto:hassnainlaghari110@gmail.com"
                             className="social-card email"
@@ -94,7 +107,7 @@ const Contact = () => {
                             <span className="card-arrow">→</span>
                         </a>
 
-                        {/* 3rd: GitHub */}
+                        {/* 4th: GitHub */}
                         <a
                             href="https://github.com/HasnainMurtazaLaghari"
                             target="_blank"
@@ -109,9 +122,10 @@ const Contact = () => {
                             <span className="card-arrow">→</span>
                         </a>
 
-                        {/* 4th: LinkedIn */}
+                        {/* 5th: LinkedIn */}
                         <a
-                            href="https://linkedin.com/in/hasnain-laghari-5316b627"
+
+                            href="https://www.linkedin.com/in/hasnain-murtaza-5316b6278/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="social-card linkedin"

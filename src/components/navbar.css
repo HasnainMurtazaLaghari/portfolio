@@ -151,7 +151,7 @@
 
 /* ===== HAMBURGER ===== */
 .hamburger {
-    display: none;
+    display: none; /* Hidden by default on desktop */
     background: none;
     border: none;
     font-size: 1.5rem;
@@ -160,6 +160,8 @@
     padding: 8px;
     border-radius: 8px;
     transition: all 0.3s ease;
+    z-index: 1001; /* Make sure it's above the nav links */
+    position: relative;
 }
 
 .hamburger:hover {
@@ -169,6 +171,7 @@
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+    /* Show hamburger on mobile */
     .hamburger {
         display: block;
     }
@@ -193,6 +196,7 @@
         box-shadow: -4px 0 30px rgba(0, 0, 0, 0.5);
         border-left: 1px solid rgba(255, 255, 255, 0.05);
         overflow-y: auto;
+        z-index: 999; /* Behind hamburger */
     }
 
     .nav-links.active {
