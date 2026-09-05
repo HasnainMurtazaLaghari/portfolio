@@ -61,6 +61,10 @@ const Hero = () => {
                         alt="Hasnain Murtaza"
                         className="profile-pic"
                     />
+                    <div className="location-badge">
+                        <span className="location-dot"></span>
+                        Saddar, Karachi, Pakistan
+                    </div>
                 </div>
                 <h1>Hi, I'm <span className="highlight">Hasnain Murtaza</span></h1>
                 <p className="tagline">
