@@ -2,6 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { FaHome, FaUser, FaCode, FaBriefcase, FaProjectDiagram, FaEnvelope, FaBars, FaTimes } from 'react-icons/fa';
 import './navbar.css';
 
+const navLinks = [
+    { name: 'Home', href: '#home', icon: <FaHome /> },
+    { name: 'About', href: '#about', icon: <FaUser /> },
+    { name: 'Skills', href: '#skills', icon: <FaCode /> },
+    { name: 'Experience', href: '#experience', icon: <FaBriefcase /> },
+    { name: 'Projects', href: '#projects', icon: <FaProjectDiagram /> },
+    { name: 'Contact', href: '#contact', icon: <FaEnvelope /> }
+];
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -9,18 +18,17 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
+            setScrolled(window.scrollY > 40);
 
-            const sections = ['home', 'about', 'skills', 'experience', 'projects', 'contact'];
-            const scrollPosition = window.scrollY + 100;
-
-            for (const section of sections) {
-                const element = document.getElementById(section);
+            const scrollPosition = window.scrollY + 120;
+            for (const link of navLinks) {
+                const id = link.href.replace('#', '');
+                const element = document.getElementById(id);
                 if (element) {
                     const offsetTop = element.offsetTop;
                     const offsetHeight = element.offsetHeight;
                     if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-                        setActiveSection(section);
+                        setActiveSection(id);
                         break;
                     }
                 }
@@ -31,58 +39,76 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Jab mobile menu open ho, page scroll lock kar dete hain
+    useEffect(() => {
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+        return () => { document.body.style.overflow = ''; };
+    }, [isOpen]);
+
     const handleLinkClick = () => {
         setIsOpen(false);
     };
 
-    const navLinks = [
-        { name: 'Home', href: '#home', icon: <FaHome /> },
-        { name: 'About', href: '#about', icon: <FaUser /> },
-        { name: 'Skills', href: '#skills', icon: <FaCode /> },
-        { name: 'Experience', href: '#experience', icon: <FaBriefcase /> },
-        { name: 'Projects', href: '#projects', icon: <FaProjectDiagram /> },
-        { name: 'Contact', href: '#contact', icon: <FaEnvelope /> }
-    ];
-
     return (
-        <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
-            <div className="container">
-                {/* Logo Completely Removed */}
+        <>
+            <nav className={`nb ${scrolled ? 'nb--scrolled' : ''}`}>
+                <div className="nb__inner">
+                    <a href="#home" className="nb__mark" onClick={handleLinkClick}>
+                        <span className="nb__mark-dot" />
+                        Portfolio
+                    </a>
 
-                {/* Nav Links - Center */}
-                <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
-                    {navLinks.map((link) => (
-                        <li key={link.name}>
-                            <a
-                                href={link.href}
-                                className={activeSection === link.name.toLowerCase() ? 'active' : ''}
-                                onClick={handleLinkClick}
-                            >
-                                <span className="nav-icon">{link.icon}</span>
-                                <span className="nav-text">{link.name}</span>
-                            </a>
-                        </li>
-                    ))}
+                    <ul className="nb__links">
+                        {navLinks.map((link) => {
+                            const id = link.href.replace('#', '');
+                            return (
+                                <li key={link.name}>
+                                    <a
+                                        href={link.href}
+                                        className={activeSection === id ? 'is-active' : ''}
+                                    >
+                                        {link.name}
+                                    </a>
+                                </li>
+                            );
+                        })}
+                    </ul>
+
+                    <button
+                        type="button"
+                        className={`nb__toggle ${isOpen ? 'is-open' : ''}`}
+                        aria-label={isOpen ? 'Menu band karein' : 'Menu kholain'}
+                        aria-expanded={isOpen}
+                        onClick={() => setIsOpen((prev) => !prev)}
+                    >
+                        <span className="nb__toggle-icon">
+                            {isOpen ? <FaTimes /> : <FaBars />}
+                        </span>
+                    </button>
+                </div>
+            </nav>
+
+            {/* Mobile full-screen menu */}
+            <div className={`nb__overlay ${isOpen ? 'is-open' : ''}`}>
+                <ul className="nb__overlay-links">
+                    {navLinks.map((link, i) => {
+                        const id = link.href.replace('#', '');
+                        return (
+                            <li key={link.name} style={{ transitionDelay: `${i * 40}ms` }}>
+                                <a
+                                    href={link.href}
+                                    className={activeSection === id ? 'is-active' : ''}
+                                    onClick={handleLinkClick}
+                                >
+                                    <span className="nb__overlay-icon">{link.icon}</span>
+                                    {link.name}
+                                </a>
+                            </li>
+                        );
+                    })}
                 </ul>
-
-                {/* Hamburger */}
-                <button className="hamburger" onClick={() => setIsOpen(!isOpen)}>
-                    {isOpen ? <FaTimes /> : <FaBars />}
-                </button>
             </div>
-
-            {/* Animated Background Pattern */}
-            <div className="navbar-pattern">
-                <div className="pattern-dot"></div>
-                <div className="pattern-dot"></div>
-                <div className="pattern-dot"></div>
-                <div className="pattern-dot"></div>
-                <div className="pattern-dot"></div>
-                <div className="pattern-dot"></div>
-                <div className="pattern-dot"></div>
-                <div className="pattern-dot"></div>
-            </div>
-        </nav>
+        </>
     );
 };
 
